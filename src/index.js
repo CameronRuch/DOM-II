@@ -30,6 +30,21 @@ document.body.addEventListener('dblclick', evt => {
 
 })
 
+// keydown
+
+window.addEventListener('keydown', evt => {
+    if (evt.key == 5) {
+        document.body.innerHTML = 'You Deleted EVERYTHING!';
+    }
+})
+
+//mousemove
+document.body.addEventListener('mousemove', evt => {
+    const {clientX, clientY} = evt;
+    console.log(`mouse cursor is at ${clientX}, ${clientY}`);
+})
+
+
 
 
 }
