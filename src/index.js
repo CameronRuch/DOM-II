@@ -17,21 +17,18 @@ window.onload = function (evt) {
     })
 
 // click
-
 document.body.addEventListener('click', evt => {
     evt.target.classList.toggle('dup');
 
 })
 
 // dblclick
-
 document.body.addEventListener('dblclick', evt => {
     evt.target.outerHTML = [];
 
 })
 
 // keydown
-
 window.addEventListener('keydown', evt => {
     if (evt.key == 5) {
         document.body.innerHTML = 'You Deleted EVERYTHING!';
@@ -41,10 +38,19 @@ window.addEventListener('keydown', evt => {
 //mousemove
 document.body.addEventListener('mousemove', evt => {
     const {clientX, clientY} = evt;
-    console.log(`mouse cursor is at ${clientX}, ${clientY}`);
+    // console.log(`mouse cursor is at ${clientX}, ${clientY}`);
 })
 
-
-
+//mouseenter
+const destinations = document.querySelectorAll('.destination');
+for (let destination of destinations) {
+    destination.addEventListener('mouseenter', evt => {
+        destination.style.fontWeight = 'bold';
+    })
+//mouseleave
+destination.addEventListener('mouseleave', () => {
+    destination.style.fontWeight = 'initial';
+})
+}
 
 }
